@@ -1,9 +1,10 @@
 
 
-function retornaValorPontoDeAudiencia(pracaDesejada, totalPontosAtracao){
+function infosAudienciaAtracao(pracaDesejada, totalPontosAtracao, nomeAtracao){
 
   pracaDesejada = pracaDesejada.toLowerCase();
-  let mercados_array = [
+
+  let numerosReferenciaPontoIbopeTv = [
     pnt = {
       nome_praca:"pnt",
       qtd_domicilios:258.821,
@@ -86,22 +87,36 @@ function retornaValorPontoDeAudiencia(pracaDesejada, totalPontosAtracao){
     }
   ]
 
-  console.log(`praça desejada pelo usuário:${pracaDesejada}`);
   
-  let praca = encontraPraca(pracaDesejada, mercados_array);
+  
+  let praca = pegaInfosPraca(pracaDesejada, numerosReferenciaPontoIbopeTv);
 
   let totTelespectadores = calculaQtdTelespectadores(praca, totalPontosAtracao);
-  console.log(`Total de telespctadores${totTelespectadores.toFixed(3)}`);
-
-
-  let totDomicilios = calculaQtdDomicilios(praca,totalPontosAtracao);
-  console.log(`Total de domicílios${totDomicilios.toFixed(3)}`);
-
-}retornaValorPontoDeAudiencia("rj", 46);
-
-function encontraPraca(pracaDesejada, mercado_array){
-
   
+  let totDomicilios = calculaQtdDomicilios(praca,totalPontosAtracao);
+  
+
+  const numeros_da_atracao = {
+    nome_atracao: nomeAtracao,
+    praca: praca.nome_praca,
+    tot_domicilios:totDomicilios,
+    tot_telespectadores:totTelespectadores
+  }
+
+
+  console.log("---NÚMEROS DA ATRAÇÃO---");
+  console.log(`Nome da Atração: ${numeros_da_atracao.nome_atracao}`)
+  console.log(`Praça desejada pelo usuário: ${numeros_da_atracao.praca}`);
+  console.log(`Total de telespectadores: ${numeros_da_atracao.tot_telespectadores.toFixed(3)}`);
+  console.log(`Total de domicílios: ${numeros_da_atracao.tot_domicilios.toFixed(3)}`);
+
+  return numeros_da_atracao;
+
+}infosAudienciaAtracao("bh", 32, "Final da copa do Brasil de 2022");
+
+
+
+function pegaInfosPraca(pracaDesejada, mercado_array){
 
   for(let praca of mercado_array){
     if(pracaDesejada == praca.nome_praca){
@@ -109,18 +124,19 @@ function encontraPraca(pracaDesejada, mercado_array){
     }  
   }
 
-  return "Não foi encontrada a praça desejada!";
-  
+  return "Não foi encontrada a praça desejada!"; 
 }
+
 
 function calculaQtdTelespectadores(praca,totalPontosAtracao){
 
   let totTelespectadores = praca.ponto*totalPontosAtracao;
   return totTelespectadores;
-
 }
 
+
 function calculaQtdDomicilios(praca,totalPontosAtracao){
+
   let totDomicilios = praca.qtd_domicilios*totalPontosAtracao;
   return totDomicilios;
 }

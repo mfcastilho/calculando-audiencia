@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 10px;
+  --cor_fundo_site:#d3a90c;
+}
+
+body{
+
+}
+
+.content{
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+
