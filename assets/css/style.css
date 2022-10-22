@@ -45,14 +45,14 @@ main{
 
 .background-image-box{
   width: 102.3rem;
-  height: 82.2rem;
+  height: 98.2rem;
 
 
   background-image: url("../img/tv-image.png");
   background-repeat: no-repeat;
-  background-size: 70.4rem;
-  background-position-x: 26.6rem;
-  background-position-y: 16.6rem; 
+  background-size: 88.4rem;
+  background-position-x: 8.6rem;
+  background-position-y: 14.6rem; 
 
   opacity: 0.1;
   z-index:-1;
@@ -63,16 +63,23 @@ footer{
   width: 100%;
   max-width: 140rem;
   max-height: 18.8rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   background-color: #2F3841;
-  font-size: 1.4rem;
+
+  font-size: 1.8rem;
   color: #FFFFFF;
+
   padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 footer img{
   width: 10%;
 }
+
+
