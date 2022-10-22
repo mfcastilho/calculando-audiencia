@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
@@ -9,28 +13,28 @@
   --cor_fundo_site:#2F3841;
 }
 
-
 .content{
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container{
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
 header{
-  position: fixed;
+ 
+  /* position: fixed; */
   width: 100%;
   max-width: 140rem;
   max-height: 13.8rem;
   display: flex;
-  justify-content:space-between;
+  justify-content:flex-start;
   align-items: center;
   background-color: var(--cor_fundo_site);
   padding-left: 7%;
+  margin-bottom: 3rem;
 }
 
 header img{
@@ -39,23 +43,110 @@ header img{
 
 main{
   display: flex;
-  justify-content: flex-end;
-  
+  flex-direction: column;
+  padding:0 7%;
 }
 
-.background-image-box{
-  width: 102.3rem;
-  height: 98.2rem;
+main h1{
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
 
+.attraction-name-section{
+  display: flex;
+  flex-direction: column;
+}
 
-  background-image: url("../img/tv-image.png");
-  background-repeat: no-repeat;
-  background-size: 88.4rem;
-  background-position-x: 8.6rem;
-  background-position-y: 14.6rem; 
+.attraction-name-section label{
+  font-size: 2.2rem;
+  font-weight: bold;
+}
 
-  opacity: 0.1;
-  z-index:-1;
+.attraction-name-section input{
+  width: 74rem;
+  height: 4rem;
+  background-color: #D9D9D9;
+  border-radius: 1rem;
+  border: none;
+  padding-left: 2rem;
+  font-size: 2.2rem;
+}
+
+.attraction-name-section input:focus{
+  outline: none;
+}
+
+.checkbox-section{
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-section label{
+  font-size: 2.2rem;
+  font-weight: bolder;
+  margin-top: 2rem;
+  margin-bottom: .4rem;
+}
+
+.checkbox-container input{
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checkbox-container label{
+  font-size: 2rem;
+}
+
+.audience-points-section{
+  display: flex;
+  flex-direction: column;
+}
+
+.audience-points-section label{
+  font-size: 2.2rem;
+  font-weight: bolder;
+  margin-top: 2rem;
+}
+.audience-points-section input{
+  width: 10.9rem;
+  height: 4rem;
+  background-color: #D9D9D9;
+  border-radius: 1rem;
+  border: none;
+  font-size: 2.2rem;
+  text-align: center;
+}
+.audience-points-section input:focus{
+  outline: none;
+}
+
+.calculation-button-section{
+  display: flex;
+  justify-content: center;
+
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.calculation-button-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 45.3rem;
+  height: 9.4rem;
+  background-color: #D15A26;
+  border-radius: 1rem;
+  border: none;
+
+  font-size: 3.6rem;
+  color: #FFFFFF;
+}
+
+.calculation-button-box:hover{
+  background-color: #dd4706;
+  cursor: pointer;
 }
 
 
@@ -76,7 +167,11 @@ footer{
 
   padding-bottom: 1rem;
   padding-top: 1rem;
+
+  font-family: 'Inter', sans-serif;
 }
+
+
 
 footer img{
   width: 10%;
