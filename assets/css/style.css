@@ -6,12 +6,9 @@
 
 :root{
   font-size: 10px;
-  --cor_fundo_site:#d3a90c;
+  --cor_fundo_site:#2F3841;
 }
 
-body{
-
-}
 
 .content{
   width: 100%;
@@ -28,11 +25,31 @@ header{
   display: flex;
   justify-content:space-between;
   align-items: center;
-  background-color: #d3a90c;
-  padding-left: 5%;
+  background-color: var(--cor_fundo_site);
+  padding-left: 7%;
 }
 
 header img{
   width: 10%;
 }
 
+main{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.background-image-box{
+  width: 102.3rem;
+  height: 82.2rem;
+
+
+  background-image: url("../img/tv-image.png");
+  background-repeat: no-repeat;
+  background-size: 81.4rem;
+  background-position-x: 15.6rem;
+  background-position-y: 3.6rem; 
+
+  opacity: 0.1;
+  
+}
