@@ -112,7 +112,7 @@ function infosAudienciaAtracao(pracaDesejada, totalPontosAtracao, nomeAtracao){
 
   return numeros_da_atracao;
 
-}infosAudienciaAtracao("bh", 32, "Final da copa do Brasil de 2022");
+}infosAudienciaAtracao("rj", 42, "Final da copa do Brasil de 2022");
 
 
 

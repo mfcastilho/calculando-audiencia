@@ -15,9 +15,24 @@ body{
 
 .content{
   width: 100%;
+  margin: 0 auto;
+}
+
+.container{
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
+header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #d3a90c;
+  padding-left: 5%;
+}
 
+header img{
+  width: 10%;
+}
 
