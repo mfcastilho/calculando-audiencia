@@ -4,16 +4,25 @@ const calcButton = document.querySelector("[data-calculation-button]");
   //Event Calculation Button
   calcButton.addEventListener("click", (event) =>{
     event.preventDefault();
-    formsValidation();
+    const resp =  formsValidation();
 
-    getInputInfos();
+    if(resp == true){
+      return;
+    }
+    // getInputInfos();
+
+    // // const printState = document.querySelector("[data-index-in-print-state]");
+    // // printState.style.display = "flex";
+
+    // // const fillingState = document.querySelector("[data-index-in-filling-state]");
+    // // fillingState.style.display = "none";
 });
 
 
 
 
 
-
+//Pegando as informações passadas pelo usuário
 function getInputInfos(){
 
   const tvProgramName = document.querySelector("[data-tv-program]");
@@ -23,32 +32,71 @@ function getInputInfos(){
   const audiencePoints = document.querySelector("[data-audience-points]");
 
 
-  const objectProgram = infosAudienciaAtracao(region.value,audiencePoints.value,tvProgramName.value);
+  const objectTvProgram = infosAudienciaAtracao(region.value,audiencePoints.value,tvProgramName.value);
+  
+  console.log("Objeto-informations"+objectTvProgram.nome_atracao);
 
-  console.log("Objeto-informations"+objectProgram.nome_atracao);
+  setInputInfos(tvProgramName.value, objectTvProgram.praca, audiencePoints.value);
+  printCalculationResult(objectTvProgram);
 
-  setInputInfos(tvProgramName.value, objectProgram.praca, audiencePoints.value);
+}
+
+function printCalculationResult(objectTvProgram){
+
+  document.querySelector("[data-viewers-result]").innerHTML = "";
+  document.querySelector("[data-result-of-households]").innerHTML = "";
+  
+  
+  const viewsResultDiv = document.querySelector("[data-viewers-result]");
+  const resultHouseholdsDiv = document.querySelector("[data-result-of-households]");
+
+  viewsResultDiv.style.display = "flex";
+  resultHouseholdsDiv.style.display = "flex";
+
+
+  const viewsResult = document.createElement("span");
+  const householdsResult = document.createElement("span");
+
+  viewsResult.innerHTML = objectTvProgram.tot_telespectadores;
+  householdsResult.innerHTML = objectTvProgram.tot_domicilios;
+
+
+  console.log(viewsResult.innerHTML);
+  console.log(householdsResult.innerHTML);
+  
+  viewsResult.style.fontSize = "4.1rem";
+  householdsResult.style.fontSize = "4.1rem";
+  
+ 
+  
+  viewsResultDiv.appendChild(viewsResult);
+  resultHouseholdsDiv.appendChild(householdsResult);
+
 
 }
 
 
 
 
-
+//Imprimindo na tela as informaçõe spassadas pelo usuário
 function setInputInfos(tvProgramName, region, audiencePoints){
 
-  console.log(region)
+  
+  document.querySelector("[data-print-program-name]").innerHTML = "";
+  document.querySelector("[data-print-region-name]").innerHTML = "";
+  document.querySelector("[data-print-audience-points]").innerHTML = "";
+  
   const span1 = document.createElement("span");
   span1.innerHTML = tvProgramName;
-  console.log(span1.innerHTML);
+  
   
   const span2 = document.createElement("span");
   span2.innerHTML = region;
-  console.log(span2.innerHTML);
+  
 
   const span3 = document.createElement("span");
   span3.innerHTML = audiencePoints;
-  console.log(span3.innerHTML);
+  
   
   const div = document.querySelector("[data-print-program-name]");
   div.appendChild(span1);
@@ -58,6 +106,8 @@ function setInputInfos(tvProgramName, region, audiencePoints){
 
   const div3 = document.querySelector("[data-print-audience-points]");
   div3.appendChild(span3);
+
+  
 
 }
 
@@ -221,7 +271,7 @@ function getButton(){
 });
 }
 
-//Function - Forms Validation
+//validando formulários
 function formsValidation(){
 
   const tvProgram = document.querySelector("[data-tv-program]");
@@ -232,13 +282,27 @@ function formsValidation(){
     alert("Digite o nome do programa de tv que deseja obter o cálculo de audiência!");
   }else if(audiencePoints.value == ""){
     alert("Digite Quantos pontos de audiência teve o programa!");
+  }else{
+
+    getInputInfos();
+
+    const printState = document.querySelector("[data-index-in-print-state]");
+    printState.style.display = "flex";
+
+    const fillingState = document.querySelector("[data-index-in-filling-state]");
+    fillingState.style.display = "none";
+    return false;
   }
+
+  return true;
   
 }
 
+
+
+//Passa o nome da região por extenso
 function fullRegionName(praca){
 
-  
 
   if(praca.nome_praca == "pnt"){
     praca.nome_praca = "Painel Nacional de TV";

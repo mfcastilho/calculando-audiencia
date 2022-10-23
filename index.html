@@ -17,7 +17,7 @@
       <main>
         
         <!-- Seção onde aparece o resultado do cálculo -->
-        <section class="index-in-print-state print-calc-results">
+        <section class="index-in-print-state print-calc-results" data-index-in-print-state>
           <div class="   ">
             <div class="infos">
               <span>Nome da atração:</span>
@@ -46,22 +46,23 @@
             <h4>Total de telespectadores que assitiram ao programa:</h4>
 
             <!-- Div aonde será inserido resultado da qtd telespectadores -->
-            <div class="viewers-result"></div>
+            <div class="viewers-result" data-viewers-result></div>
+            <span class="people households"> pessoas</span>
 
             <h4>Total de domicílios que assistiram ao programa:</h4>
 
             <!-- Div aonde será inserido resultado da qtd domicílios -->
-            <div class="result-of-households"></div>
-
+            <div class="result-of-households" data-result-of-households></div>
+            <span class="people households"> pessoas</span>
           </div>
         </section>
 
         <!-- Seção onde aparece os formulários para serem preenchidos antes do cálculo -->
-        <section class="index-in-filling-state">
+        <section class="index-in-filling-state" data-index-in-filling-state>
           <h1>Para calcularmos a audiência, preencha o formulário abaixo:</h1>
 
           <div class="forms-box">
-            
+            <form action="">
               <article class="attraction-name-section">
                 <label for="tv-program">Digite o nome do programa de tv</label>
                 <input
@@ -227,8 +228,8 @@
                 >
                 <input
                   type="number"
-                  id="audience-points-id"
-                  data-audience-points
+                  id="audience-points-id" max="100"
+                  data-audience-points required
                 />
               </article>
 
@@ -237,7 +238,7 @@
                   Calcular
                 </button>
               </article>
-            
+            </form>
           </div>
         </section>
       </main>

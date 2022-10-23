@@ -52,7 +52,7 @@ main h1 {
 
 /*IMPORTANTE - Seção onde aparece o resultado*/
 .index-in-print-state {
-  display: flex;
+  display: none;
   flex-direction: column;
   padding: 0 10rem;
 }
@@ -107,6 +107,18 @@ main h1 {
   color: #4e4a4a;
 }
 
+.viewers-result{
+  display: inline;
+}
+
+.result-of-households{
+  display: inline;
+}
+
+.people, .households{
+  font-size: 2.4rem;
+  font-weight: bold;
+}
 .forms-box {
   padding-left: 10rem;
 }
