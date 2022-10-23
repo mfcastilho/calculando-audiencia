@@ -1,127 +1,173 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   font-size: 10px;
-  --cor_fundo_site:#2F3841;
+  --cor_fundo_site: #2f3841;
 }
 
-.content{
+.content {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-body{
+body {
   font-family: 'Open Sans', sans-serif;
 }
 
-header{
- 
+header {
   /* position: fixed; */
   width: 100%;
   max-width: 140rem;
   max-height: 13.8rem;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: center;
   background-color: var(--cor_fundo_site);
-  padding-left: 7%;
+  padding-left: 10%;
   margin-bottom: 3rem;
 }
 
-header img{
+header img {
   width: 10%;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
-  padding:0 7%;
+  padding: 0 10rem;
 }
 
-main h1{
+main h1 {
   font-size: 3.2rem;
   text-align: center;
   margin-bottom: 5rem;
 }
 
-.attraction-name-section{
+/*IMPORTANTE - Seção onde aparece o resultado*/
+.index-in-print-state {
+  display: none;
+  flex-direction: column;
+  padding: 0 10rem;
+}
+
+.program-infos {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.infos {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+/*IMPORTANTE - Sessão onde se preenche formulários*/
+.index-in-filling-state {
   display: flex;
   flex-direction: column;
 }
 
-.attraction-name-section label{
+.calc-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-results h2 {
+  font-size: 4.3rem;
+  font-weight: bold;
+  color: #c20b21;
+
+  padding: 4rem;
+}
+
+.calc-results h4 {
+  font-size: 2.7rem;
+  font-weight: bold;
+  padding-bottom: 4rem;
+  color: #4e4a4a;
+}
+
+.forms-box {
+  padding-left: 10rem;
+}
+
+.attraction-name-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.attraction-name-section label {
   font-size: 2.2rem;
   font-weight: bold;
 }
 
-.attraction-name-section input{
+.attraction-name-section input {
   width: 74rem;
   height: 4rem;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 1rem;
   border: none;
   padding-left: 2rem;
   font-size: 2.2rem;
 }
 
-.attraction-name-section input:focus{
+.attraction-name-section input:focus {
   outline: none;
 }
 
-.checkbox-section{
+.checkbox-section {
   display: flex;
   flex-direction: column;
 }
 
-.checkbox-section label{
+.checkbox-section label {
   font-size: 2.2rem;
   font-weight: bolder;
   margin-top: 2rem;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 
-.checkbox-container input{
+.checkbox-container input {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.checkbox-container label{
+.checkbox-container label {
   font-size: 2rem;
 }
 
-.audience-points-section{
+.audience-points-section {
   display: flex;
   flex-direction: column;
 }
 
-.audience-points-section label{
+.audience-points-section label {
   font-size: 2.2rem;
   font-weight: bolder;
   margin-top: 2rem;
 }
-.audience-points-section input{
+.audience-points-section input {
   width: 10.9rem;
   height: 4rem;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 1rem;
   border: none;
   font-size: 2.2rem;
   text-align: center;
 }
-.audience-points-section input:focus{
+.audience-points-section input:focus {
   outline: none;
 }
 
-.calculation-button-section{
+.calculation-button-section {
   display: flex;
   justify-content: center;
 
@@ -129,28 +175,29 @@ main h1{
   margin-bottom: 5rem;
 }
 
-.calculation-button-box{
+.calculation-button-box {
   display: flex;
   justify-content: center;
   align-items: center;
 
   width: 45.3rem;
   height: 9.4rem;
-  background-color: #D15A26;
+  background-color: #d15a26;
   border-radius: 1rem;
   border: none;
 
   font-size: 3.6rem;
-  color: #FFFFFF;
+  color: #ffffff;
+  font-weight: bold;
 }
 
-.calculation-button-box:hover{
+.calculation-button-box:hover {
   background-color: #dd4706;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-
-footer{
+footer {
   width: 100%;
   max-width: 140rem;
   max-height: 18.8rem;
@@ -160,10 +207,10 @@ footer{
   justify-content: center;
   align-items: center;
 
-  background-color: #2F3841;
+  background-color: #2f3841;
 
   font-size: 1.8rem;
-  color: #FFFFFF;
+  color: #ffffff;
 
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -171,10 +218,6 @@ footer{
   font-family: 'Inter', sans-serif;
 }
 
-
-
-footer img{
+footer img {
   width: 10%;
 }
-
-

@@ -1,134 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Calculador de Audiência</title>
-</head>
-<body>
-  <div class="content">
-    <header>
-      <img src="./assets/img/logo.png" alt="site logo">
-    </header>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Calculador de Audiência</title>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <img src="./assets/img/logo.png" alt="site logo" />
+      </header>
 
-    <main>
+      <main>
+        <!-- Seção onde aparece o resultado do cálculo -->
+        <section class="index-in-print-state print-calc-results">
+          <div class="program-infos">
+            <div class="infos">
+              <span>Nome da atração:</span>
 
-      <h1>Para calcularmos a audiência, preencha o formulário abaixo:</h1>
+              <!-- Div aonde será imprimido o nome do programa -->
+              <div class="print-program-name"></div>
 
-      <section class="attraction-name-section">
-        <label for="nome-atracao">Digite o nome da atração</label>
-        <input id="nome-atracao" type="text">
-      </section>
+            </div>
+            <div class="infos">
+              <span>Praça (região):</span>
 
-      <section class="checkbox-section">
+              <!-- Div aonde será imprimido a região do programa -->
+              <div class="print-region-name"></div>
 
-        <label for="">Escolha a praça (região)</label>
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button" id="pnt" value="pnt" checked>
-          <label for="pnt">Painel Nacional de TV (15 maiores mercados juntos)</label>
-        </div>
+            </div>
+            <div class="infos">
+              <span>Pontos de audiência da atração:</span>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="sp" value="sp">
-          <label for="sp">Grande São Paulo</label>
-        </div>
+              <!-- Div aonde será imprimido os pontos de audiência -->
+              <div class="print-audience-points"></div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="rj" value="rj">
-          <label for="rj">Grande Rio de Janeiro</label>
-        </div>
+            </div>
+          </div>
+          <div class="calc-results">
+            <h2>Resultado do Cálculo</h2>
+            <h4>Total de telespectadores que assitiram ao programa:</h4>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="campinas" value="campinas">
-          <label for="campinas">Grande Campinas</label>
-        </div>
+            <!-- Div aonde será inserido resultado da qtd telespectadores -->
+            <div class="viewers-result"></div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="bh" value="bh">
-          <label for="bh">Grande Belo Horizonte</label>
-        </div>
+            <h4>Total de domicílios que assistiram ao programa:</h4>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="vitoria" value="vitoria">
-          <label for="vitoria">Grande Vitória</label>
-        </div>
+            <!-- Div aonde será inserido resultado da qtd domicílios -->
+            <div class="result-of-households"></div>
+            
+          </div>
+        </section>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="porto-alegre" value="porto-alegre">
-          <label for="porto-alegre">Grande Porto Alegre</label>
-        </div>
+        <!-- Seção onde aparece os formulários para serem preenchidos antes do cálculo -->
+        <section class="index-in-filling-state">
+          <h1>Para calcularmos a audiência, preencha o formulário abaixo:</h1>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="curitiba" value="curitiba">
-          <label for="curitiba">Grande Curitiba</label>
-        </div>
+          <div class="forms-box">
+            <form action="">
+              <article class="attraction-name-section">
+                <label for="tv-program">Digite o nome do programa de tv</label>
+                <input
+                  id="tv-program"
+                  data-tv-program
+                  type="text"
+                  minlength="5"
+                  maxlength="45"
+                  required
+                />
+              </article>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="florianopolis" value="florianopolis">
-          <label for="florianopolis">Grande Florianópolis</label>
-        </div>
+              <article class="checkbox-section">
+                <label for="">Escolha a praça (região)</label>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="pnt"
+                    value="pnt"
+                    checked
+                  />
+                  <label for="pnt"
+                    >Painel Nacional de TV (15 maiores mercados juntos)</label
+                  >
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="goiania" value="goiania">
-          <label for="goiania">Grande Goiânia</label>
-        </div>
+                <div class="checkbox-container">
+                  <input type="radio" name="radio-button" id="sp" value="sp" />
+                  <label for="sp">Grande São Paulo</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="df" value="df">
-          <label for="df">Distrito Federal</label>
-        </div>
+                <div class="checkbox-container">
+                  <input type="radio" name="radio-button" id="rj" value="rj" />
+                  <label for="rj">Grande Rio de Janeiro</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="salvador" value="salvador">
-          <label for="salvador">Grande Salvador</label>
-        </div>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="campinas"
+                    value="campinas"
+                  />
+                  <label for="campinas">Grande Campinas</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="fortaleza" value="fortaleza">
-          <label for="fortaleza">Grande Fortaleza</label>
-        </div>
+                <div class="checkbox-container">
+                  <input type="radio" name="radio-button" id="bh" value="bh" />
+                  <label for="bh">Grande Belo Horizonte</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="recife" value="recife">
-          <label for="recife">Grande Recife</label>
-        </div>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="vitoria"
+                    value="vitoria"
+                  />
+                  <label for="vitoria">Grande Vitória</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="belem" value="belem">
-          <label for="belem">Grande Belém</label>
-        </div>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="porto-alegre"
+                    value="porto-alegre"
+                  />
+                  <label for="porto-alegre">Grande Porto Alegre</label>
+                </div>
 
-        <div class="checkbox-container">
-          <input type="radio" name="radio-button"  id="manaus" value="manaus">
-          <label for="manaus">Grande Manaus</label>
-        </div>
-        
-      </section>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="curitiba"
+                    value="curitiba"
+                  />
+                  <label for="curitiba">Grande Curitiba</label>
+                </div>
 
-      <section class="audience-points-section">
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="florianopolis"
+                    value="florianopolis"
+                  />
+                  <label for="florianopolis">Grande Florianópolis</label>
+                </div>
 
-        <label for="audience-points-id">Quantos pontos de audiência teve a atração?</label>
-        <input type="number" id="audience-points-id">
-      </section>
-        
-      <section class="calculation-button-section">
-        <div class="calculation-button-box">
-          Calcular
-        </div>
-      </section>
-      
-    </main>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="goiania"
+                    value="goiania"
+                  />
+                  <label for="goiania">Grande Goiânia</label>
+                </div>
 
-    <footer>
-      <img src="./assets/img/logo.png" alt="">
-      <h5>Developed by Mario Frederico de Castilho</h5>
-    </footer>
+                <div class="checkbox-container">
+                  <input type="radio" name="radio-button" id="df" value="df" />
+                  <label for="df">Distrito Federal</label>
+                </div>
 
-  </div>
-  
-  <script src="./assets/js/calc_functions.js"></script>
-</body>
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="salvador"
+                    value="salvador"
+                  />
+                  <label for="salvador">Grande Salvador</label>
+                </div>
+
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="fortaleza"
+                    value="fortaleza"
+                  />
+                  <label for="fortaleza">Grande Fortaleza</label>
+                </div>
+
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="recife"
+                    value="recife"
+                  />
+                  <label for="recife">Grande Recife</label>
+                </div>
+
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="belem"
+                    value="belem"
+                  />
+                  <label for="belem">Grande Belém</label>
+                </div>
+
+                <div class="checkbox-container">
+                  <input
+                    type="radio"
+                    name="radio-button"
+                    id="manaus"
+                    value="manaus"
+                  />
+                  <label for="manaus">Grande Manaus</label>
+                </div>
+              </article>
+
+              <article class="audience-points-section">
+                <label for="audience-points-id"
+                  >Quantos pontos de audiência o programa de tv teve nesta praça
+                  (região)</label
+                >
+                <input
+                  type="number"
+                  id="audience-points-id"
+                  data-audience-points
+                />
+              </article>
+
+              <article class="calculation-button-section">
+                <button class="calculation-button-box" data-calculation-button>
+                  Calcular
+                </button>
+              </article>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <img src="./assets/img/logo.png" alt="" />
+        <h5>Developed by Mario Frederico de Castilho</h5>
+      </footer>
+    </div>
+
+    <script src="./assets/js/calc_functions.js"></script>
+    <script src="./assets/js/forms_validation.js"></script>
+  </body>
 </html>

@@ -140,3 +140,4 @@ function calculaQtdDomicilios(praca,totalPontosAtracao){
   let totDomicilios = praca.qtd_domicilios*totalPontosAtracao;
   return totDomicilios;
 }
+
