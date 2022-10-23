@@ -50,7 +50,7 @@ function printCalculationResult(objectTvProgram){
   const viewsResultDiv = document.querySelector("[data-viewers-result]");
   const resultHouseholdsDiv = document.querySelector("[data-result-of-households]");
 
-  viewsResultDiv.style.display = "flex";
+  viewsResultDiv.style.display = "inline";
   resultHouseholdsDiv.style.display = "flex";
 
 
@@ -210,9 +210,9 @@ function infosAudienciaAtracao(pracaDesejada, totalPontosAtracao, nomeAtracao){
   
   let pracaNome = fullRegionName(praca);
 
-  let totTelespectadores = calculaQtdTelespectadores(praca, totalPontosAtracao);
+  let totTelespectadores = calculaQtdTelespectadores(praca, totalPontosAtracao).toFixed(3);
   
-  let totDomicilios = calculaQtdDomicilios(praca,totalPontosAtracao);
+  let totDomicilios = calculaQtdDomicilios(praca,totalPontosAtracao).toFixed(3);
   
 
   const numeros_da_atracao = {
@@ -226,8 +226,8 @@ function infosAudienciaAtracao(pracaDesejada, totalPontosAtracao, nomeAtracao){
   console.log("---NÚMEROS DA ATRAÇÃO---");
   console.log(`Nome da Atração: ${numeros_da_atracao.nome_atracao}`)
   console.log(`Praça desejada pelo usuário: ${numeros_da_atracao.praca}`);
-  console.log(`Total de telespectadores: ${numeros_da_atracao.tot_telespectadores.toFixed(3)}`);
-  console.log(`Total de domicílios: ${numeros_da_atracao.tot_domicilios.toFixed(3)}`);
+  console.log(`Total de telespectadores: ${numeros_da_atracao.tot_telespectadores}`);
+  console.log(`Total de domicílios: ${numeros_da_atracao.tot_domicilios}`);
 
   return numeros_da_atracao;
 }
@@ -250,6 +250,7 @@ function pegaInfosPraca(pracaDesejada, mercado_array){
 function calculaQtdTelespectadores(praca,totalPontosAtracao){
 
   let totTelespectadores = praca.ponto*totalPontosAtracao;
+
   return totTelespectadores;
 }
 
