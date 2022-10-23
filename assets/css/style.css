@@ -52,7 +52,7 @@ main h1 {
 
 /*IMPORTANTE - Seção onde aparece o resultado*/
 .index-in-print-state {
-  display: none;
+  display: flex;
   flex-direction: column;
   padding: 0 10rem;
 }
@@ -66,6 +66,18 @@ main h1 {
 .infos {
   font-size: 2.4rem;
   font-weight: bold;
+}
+
+.print-program-name{
+  display: inline;
+}
+
+.print-region-name{
+  display: inline;
+}
+
+.print-audience-points{
+  display: inline;
 }
 
 /*IMPORTANTE - Sessão onde se preenche formulários*/
